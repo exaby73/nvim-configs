@@ -1,0 +1,27 @@
+vim.opt.backup = false
+vim.opt.cc = "80"
+vim.opt.cmdheight = 2
+vim.opt.expandtab = true
+vim.opt.exrc = true
+vim.opt.guicursor = "i:block"
+vim.opt.hidden = true
+vim.opt.hlsearch = false
+vim.opt.ignorecase = true
+vim.opt.incsearch = true
+vim.opt.mouse = "a"
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 6
+vim.opt.secure = true
+vim.opt.shiftwidth = 0
+-- Not sure about this one
+-- vim.opt.shortmess = vim.opt.shortmess .. "c"
+vim.opt.signcolumn = "yes"
+vim.opt.smartcase = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.updatetime = 300
+vim.opt.wrap = false
+vim.opt.writebackup = false
