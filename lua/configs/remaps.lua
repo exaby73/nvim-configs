@@ -63,7 +63,7 @@ remap('n', '<C-d>', '<C-d>zz')
 remap('n', '<C-u>', '<C-u>zz')
 
 -- Format code
-remap('n', '<leader>f', function() vim.lsp.buf.format() end)
+remap('n', '<leader>ff', function() vim.lsp.buf.format() end)
 remap('n', '<leader>w', function()
     vim.lsp.buf.format()
     input ':w<CR>'
