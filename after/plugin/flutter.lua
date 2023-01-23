@@ -32,8 +32,14 @@ remap("n", "<leader>fe", vim.cmd.FlutterEmulators, options)
 remap("n", "<leader>ft", vim.cmd.FlutterOpenDevTools, options)
 remap("n", "<leader>fr", vim.cmd.FlutterReload, options)
 remap("n", "<leader>fR", vim.cmd.FlutterRestart, options)
+remap("n", "<leader>fc", vim.cmd.FlutterLogClear, options)
 
 remap("n", "<leader>fh", function()
     vim.api.nvim_input '<C-w>t<C-w>K'
-    vim.api.nvim_input '10<leader>]'
+
+    vim.api.nvim_input '<C-j>'
+    vim.cmd.BufferPin()
+    vim.api.nvim_input '<C-k>'
+
+    vim.api.nvim_input ':res +10<CR>'
 end)
