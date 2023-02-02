@@ -1,12 +1,10 @@
-local util = require 'formatter.util'
-
 local function defaultFormat()
     vim.lsp.buf.format()
 end
 
 require("formatter").setup {
-    logging = false,
-    log_level = vim.log.levels.OFF,
+    logging = true,
+    log_level = vim.log.levels.WARN,
     filetype = {
         dart = { defaultFormat },
         lua = { defaultFormat },
