@@ -1,4 +1,4 @@
-local function firstToUpper(str)
+function FirstToUpper(str)
     return (str:gsub("^%l", string.upper))
 end
 
@@ -7,7 +7,7 @@ function SnakeToPascalCase(word)
 
     for w in string.gmatch(word .. '_', '(.-)_') do
         if string.len(w) ~= 0 then
-            table.insert(words, firstToUpper(w))
+            table.insert(words, FirstToUpper(w))
         end
     end
 
