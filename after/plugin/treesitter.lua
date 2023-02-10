@@ -1,3 +1,7 @@
+if not vim.fn.has('unix') then
+    require 'nvim-treesitter.install'.compilers = { "clang" }
+end
+
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = "all",
