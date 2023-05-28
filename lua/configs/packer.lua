@@ -21,40 +21,42 @@ return require('packer').startup(function(use)
 
     use 'AndrewRadev/tagalong.vim' -- Auto rename XML/HTML style tags
 
-    use 'airblade/vim-gitgutter' -- Git Sidebar
+    use 'airblade/vim-gitgutter'   -- Git Sidebar
 
-    use 'ap/vim-css-color' -- Css color highlight
+    use 'ap/vim-css-color'         -- Css color highlight
 
     use {
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
-    } -- Preview markdown files in the browser
+    }                                     -- Preview markdown files in the browser
 
-    use 'kdheepak/lazygit.nvim' -- Lazygit from neovim
+    use 'kdheepak/lazygit.nvim'           -- Lazygit from neovim
 
-    use 'kyazdani42/nvim-web-devicons' -- Icons in the buffer bar
+    use 'kyazdani42/nvim-web-devicons'    -- Icons in the buffer bar
 
-    use 'machakann/vim-highlightedyank' -- Highlight yanked text
+    use 'machakann/vim-highlightedyank'   -- Highlight yanked text
 
-    use 'preservim/nerdtree' -- File explorer (mainly side bar)
+    use 'preservim/nerdtree'              -- File explorer (mainly side bar)
 
-    use 'romgrk/barbar.nvim' -- Better buffer bars
+    use 'romgrk/barbar.nvim'              -- Better buffer bars
 
-    use 'tpope/vim-commentary' -- Comment code
+    use 'tpope/vim-commentary'            -- Comment code
 
-    use 'tpope/vim-fugitive' -- Git
+    use 'tpope/vim-fugitive'              -- Git
 
-    use 'tpope/vim-speeddating' -- Increment/decrement dates like numbers with <C-a> and <C-x>
+    use 'tpope/vim-speeddating'           -- Increment/decrement dates like numbers with <C-a> and <C-x>
 
-    use 'tpope/vim-surround' -- Surround text with quotes, brackets, etc.
+    use 'tpope/vim-surround'              -- Surround text with quotes, brackets, etc.
 
     use 'vim-scripts/ReplaceWithRegister' -- Replace text without overwriting default register
 
-    use 'mbpowers/lorem-nvim' -- Lorem generator
+    use 'mbpowers/lorem-nvim'             -- Lorem generator
 
     use 'bkad/CamelCaseMotion'
+
+    use 'simrat39/symbols-outline.nvim' -- Get all symbols for the current buffer
 
     -- Themes
     use 'romgrk/doom-one.vim'
@@ -83,7 +85,7 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            { 'exaby73/LuaSnip', branch = 'feat/no-echo' },
+            { 'L3MON4D3/LuaSnip',                  branch = 'feat/no-echo' },
             -- Snippet Collection (Optional)
             { 'rafamadriz/friendly-snippets' },
         }

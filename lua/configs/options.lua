@@ -14,14 +14,15 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 6
 vim.opt.secure = true
 vim.opt.shiftwidth = 0
--- Not sure about this one
--- vim.opt.shortmess = vim.opt.shortmess .. "c"
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
+vim.opt.textwidth = 80
 vim.opt.updatetime = 300
 vim.opt.wrap = false
 vim.opt.writebackup = false
+
+vim.cmd "set fo+=t"

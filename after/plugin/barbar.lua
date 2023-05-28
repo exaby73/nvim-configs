@@ -26,5 +26,3 @@ remap('n', '<leader>P', vim.cmd.BufferPin, options)
 remap('n', '<', vim.cmd.BufferPrevious, options)
 remap('n', '>', vim.cmd.BufferNext, options)
 remap('n', '<leader>?', vim.cmd.BufferClose, options)
-
-

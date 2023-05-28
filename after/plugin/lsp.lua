@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local lsp_config = require('lspconfig')
 lsp.preset('recommended')
 
 lsp.nvim_workspace()
@@ -9,6 +10,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<A-i>'] = cmp.mapping.complete(),
 })
@@ -17,7 +19,7 @@ lsp.setup_nvim_cmp({
     mapping = cmp_mappings
 })
 
-lsp.on_attach(function(client, bufnr)
+local on_attach = function(client, bufnr)
     local options = { buffer = bufnr, remap = false }
 
     if client.name == "eslint" then
@@ -37,7 +39,23 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>rr", vim.lsp.buf.references, options)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, options)
     vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, options)
-end)
+end
+
+lsp.on_attach(on_attach)
+
+lsp_config['dartls'].setup({
+    on_attach = on_attach,
+    settings = {
+        dart = {
+            analysisExcludeFolders = {
+                vim.fn.expand('$HOME/AppData/Local/Pub/Cache'),
+                vim.fn.expand('$HOME/.pub-cache'),
+                vim.fn.expand('/opt/homebrew/'),
+                vim.fn.expand('$HOME/tools/flutter/'),
+            }
+        }
+    }
+})
 
 lsp.setup()
 
