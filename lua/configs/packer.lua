@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
             { 'hrsh7th/cmp-nvim-lua' },
 
             -- Snippets
-            { 'L3MON4D3/LuaSnip',                  branch = 'feat/no-echo' },
+            { 'exaby73/LuaSnip',                 branch = 'feat/no-echo' },
             -- Snippet Collection (Optional)
             { 'rafamadriz/friendly-snippets' },
         }
@@ -98,6 +98,8 @@ return require('packer').startup(function(use)
     }
 
     use 'mhartington/formatter.nvim'
+
+    use 'github/copilot.vim'
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
