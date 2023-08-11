@@ -9,7 +9,10 @@ local M = {
             "saadparwaiz1/cmp_luasnip", -- snippet completions
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua",
-            "L3MON4D3/LuaSnip",             --snippet engine
+            {
+                "exaby73/LuaSnip",
+                branch = "feat/no-echo",
+            },
             "rafamadriz/friendly-snippets", -- a bunch of snippets to use
         },
         config = function()
@@ -33,13 +36,13 @@ local M = {
                 return
             end
 
+            require 'luasnip.loaders.from_snipmate'.lazy_load()
+            require 'luasnip.loaders.from_vscode'.lazy_load()
+
             local snip_status_ok, luasnip = pcall(require, "luasnip")
             if not snip_status_ok then
                 return
             end
-
-            require 'luasnip.loaders.from_snipmate'.lazy_load()
-            require 'luasnip.loaders.from_vscode'.lazy_load()
 
             --   פּ ﯟ   some other good icons
             local kind_icons = {
