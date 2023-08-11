@@ -53,3 +53,6 @@ keymap("v", "<", "<gv", opts)
 
 -- Close Quickfix Window
 keymap("n", "<leader>cc", "<cmd>cclose<cr>", opts)
+
+keymap("n", map.OPT_BACKSLASH, "<cmd>FlutterReload<cr>", opts)
+keymap("n", map.OPT_SHIFT_BACKSLASH, "<cmd>FlutterRestart<cr>", opts)
